@@ -1,3 +1,5 @@
+## [0.0.3](https://github.com/Jack-Kunlun/xbd-ui-v2/compare/v0.0.2...v0.0.3) (2024-01-10)
+
 ## 0.0.2 (2024-01-10)
 
 ### Features
