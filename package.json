@@ -15,7 +15,8 @@
 		"pre-commit": "lint-staged",
 		"build:lib": "vue-cli-service build --target lib --name xbd-ui-v2 --dest lib ./src/index.js",
 		"build:theme": "node build/bin/gen-cssfile && gulp build --gulpfile packages/theme-chalk/gulpfile.js && cp-cli packages/theme-chalk/lib lib/theme-chalk",
-		"build": "npm run clean && webpack --config build/webpack.conf.js && webpack --config build/webpack.common.js && webpack --config build/webpack.component.js && npm run build:theme"
+		"build": "npm run clean && webpack --config build/webpack.conf.js && webpack --config build/webpack.common.js && webpack --config build/webpack.component.js && npm run build:theme",
+		"version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
 	},
 	"lint-staged": {
 		"*.{js,jsx,vue}": [
@@ -27,6 +28,7 @@
 		]
 	},
 	"dependencies": {
+		"conventional-changelog-cli": "^3.0.0",
 		"core-js": "^3.8.3",
 		"element-ui": "^2.15.14",
 		"vue": "^2.6.14",
