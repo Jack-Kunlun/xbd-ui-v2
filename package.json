@@ -1,0 +1,74 @@
+{
+	"name": "xbd-ui-v2",
+	"version": "0.0.1",
+	"private": true,
+	"main": "lib/xbd-ui-v2.common.js",
+	"files": [
+		"lib",
+		"packages",
+		"src"
+	],
+	"scripts": {
+		"prepare": "husky install",
+		"lint": "vue-cli-service lint .",
+		"clean": "rimraf lib && rimraf packages/*/lib",
+		"pre-commit": "lint-staged",
+		"build:lib": "vue-cli-service build --target lib --name xbd-ui-v2 --dest lib ./src/index.js",
+		"build:theme": "node build/bin/gen-cssfile && gulp build --gulpfile packages/theme-chalk/gulpfile.js && cp-cli packages/theme-chalk/lib lib/theme-chalk",
+		"build": "npm run clean && webpack --config build/webpack.conf.js && webpack --config build/webpack.common.js && webpack --config build/webpack.component.js && npm run build:theme"
+	},
+	"lint-staged": {
+		"*.{js,jsx,vue}": [
+			"prettier --write",
+			"eslint --fix --quiet"
+		],
+		"*.{json,md,yaml}": [
+			"prettier --write"
+		]
+	},
+	"dependencies": {
+		"core-js": "^3.8.3",
+		"element-ui": "^2.15.14",
+		"vue": "^2.6.14",
+		"webpack": "^5.89.0"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.12.16",
+		"@babel/eslint-parser": "^7.12.16",
+		"@commitlint/cli": "^12.1.4",
+		"@commitlint/config-conventional": "^12.1.4",
+		"@vue/cli-plugin-babel": "~5.0.0",
+		"@vue/cli-plugin-eslint": "~5.0.0",
+		"@vue/cli-service": "~5.0.0",
+		"babel-plugin-component": "^1.1.1",
+		"cp-cli": "^1.0.2",
+		"css-loader": "^2.1.0",
+		"eslint": "^7.32.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-import": "^2.29.1",
+		"eslint-plugin-unicorn": "^32.0.0",
+		"eslint-plugin-vue": "^8.0.3",
+		"file-loader": "^6.2.0",
+		"gulp": "^4.0.0",
+		"gulp-autoprefixer": "^6.0.0",
+		"gulp-cssmin": "^0.2.0",
+		"gulp-sass": "^4.0.2",
+		"husky": "^8.0.3",
+		"lint-staged": "^10.5.4",
+		"node-sass": "^4.12.0",
+		"progress-bar-webpack-plugin": "^1.11.0",
+		"rimraf": "^2.5.4",
+		"sass-loader": "^8.0.0",
+		"style-loader": "^0.23.1",
+		"url-loader": "^1.0.1",
+		"vue-loader": "^15.7.0",
+		"vue-template-compiler": "^2.6.14",
+		"webpack-cli": "^5.1.4",
+		"webpack-node-externals": "^1.7.2"
+	},
+	"browserslist": [
+		"> 1%",
+		"last 2 versions",
+		"not dead"
+	]
+}
