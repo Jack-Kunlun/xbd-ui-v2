@@ -1,15 +1,13 @@
-# xinbada-ui-v2
+# xbd-ui-v2
+
+## Description
+
+基于 Element-ui 二次封装开发的适用于 vue2.x 的组件库。
 
 ## Project setup
 
 ```
 npm install
-```
-
-### Compiles and hot-reloads for development
-
-```
-npm run serve
 ```
 
 ### Compiles and minifies for production
