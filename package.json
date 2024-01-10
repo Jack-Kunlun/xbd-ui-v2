@@ -1,7 +1,7 @@
 {
 	"name": "xbd-ui-v2",
 	"version": "0.0.2",
-	"private": true,
+	"private": false,
 	"main": "lib/xbd-ui-v2.common.js",
 	"files": [
 		"lib",
