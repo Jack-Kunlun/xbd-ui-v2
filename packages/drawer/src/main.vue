@@ -51,13 +51,8 @@
 </template>
 
 <script>
-import { Drawer } from "element-ui";
-
 export default {
 	name: "XbdDrawer",
-	components: {
-		ElDrawer: Drawer,
-	},
 	inheritAttrs: false,
 	props: {
 		drawer: {
