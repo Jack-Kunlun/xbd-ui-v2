@@ -11,7 +11,7 @@ module.exports = {
 	output: {
 		path: path.resolve(process.cwd(), "./lib"),
 		publicPath: "/dist/",
-		filename: "element-ui.common.js",
+		filename: "xbd-ui-v2.common.js",
 		chunkFilename: "[id].js",
 		libraryExport: "default",
 		library: "ELEMENT",

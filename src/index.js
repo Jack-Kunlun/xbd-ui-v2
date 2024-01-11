@@ -1,8 +1,8 @@
-import { Drawer } from "element-ui";
-import Vue from "vue";
+// import { Drawer } from "element-ui";
+// import Vue from "vue";
 import XbdDrawer from "../packages/drawer";
 
-Vue.use(Drawer);
+// Vue.use(Drawer);
 
 const components = [XbdDrawer];
 
